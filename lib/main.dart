@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
       create: (context) => GoogleSignInProvider(),
-      child: MaterialApp(
+      child: const MaterialApp(
         home: HomePage()
       ),
     );
@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
         centerTitle: true,
       ),
         body: Padding(
-          padding: const EdgeInsets.fromLTRB(0.0, 20.0, 0.0, 0.0),
+          padding: const EdgeInsets.only(top: 20.0,),
           child: FutureBuilder(
             future: Future.wait([getData(), getDataHourly()]),
             builder: (context, snapshot) {
@@ -83,7 +83,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       currentWeather('http://openweathermap.org/img/w/${data.icon}.png', data.temp, '${data.cityName}'),
-                      SizedBox(height: 50.0),
+                      const SizedBox(height: 50.0),
                       Text(
                         'Additional information',
                         style: TextStyle(
@@ -92,14 +92,14 @@ class _HomePageState extends State<HomePage> {
                             fontWeight: FontWeight.bold
                         ),
                       ),
-                      Divider(),
-                      SizedBox(height: 10.0,),
+                      const Divider(),
+                      const SizedBox(height: 10.0,),
                       additionalInformation('${data.wind}', '${data.humidity}', '${data.pressure}', data.feelsLike),
-                      SizedBox(height: 40.0,),
+                      const SizedBox(height: 40.0,),
                       hourlyWeather(dataHourly!),
                     ]);
               } else if(snapshot.connectionState == ConnectionState.waiting) {
-                return Center(child: CircularProgressIndicator());
+                return const Center(child: CircularProgressIndicator());
               }
               return Container();
             }),

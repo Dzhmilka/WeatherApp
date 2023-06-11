@@ -11,14 +11,14 @@ Widget currentWeather(String icon, double? temp, String location){
         backgroundColor: Colors.blue[400],
         child: Image.network(icon),
       ),
-      SizedBox(height: 10.0),
+      const SizedBox(height: 10.0),
       Text(
         '${temp?.round()}°C',
-        style: TextStyle(
+        style: const TextStyle(
           fontSize: 46.0
         ),
       ),
-      SizedBox(height: 10.0),
+      const SizedBox(height: 10.0),
       Text(
         location,
         style: TextStyle(

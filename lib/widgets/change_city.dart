@@ -17,7 +17,7 @@ class _ChangeCityState extends State<ChangeCity> {
       appBar: AppBar(
         backgroundColor: Colors.blue[400],
         elevation: 0.0,
-        title: Text('Weather App', style: TextStyle(color: Colors.black)),
+        title: const Text('Weather App', style: TextStyle(color: Colors.black)),
         centerTitle: true,
       ),
       body: Center(
@@ -28,14 +28,14 @@ class _ChangeCityState extends State<ChangeCity> {
             children: [
               TextField(
                 controller: _textController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                     filled: true,
                     fillColor: Colors.white,
                     hintText: 'Write the city',
                     border: OutlineInputBorder()
                 ),
               ),
-              SizedBox(height: 10.0),
+              const SizedBox(height: 10.0),
               Ink(
                 decoration: ShapeDecoration(
                   color: Colors.blue[400],

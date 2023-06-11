@@ -16,7 +16,7 @@ Widget hourlyWeather (List<dynamic> weatherList) {
               color: Colors.grey[350],
               borderRadius: BorderRadius.circular(12.0)
             ),
-            margin: EdgeInsets.only(right: 10.0),
+            margin: const EdgeInsets.only(right: 10.0),
             child: HourlyDetails(
               temp: weatherList[index]['main']['temp'],
               time: weatherList[index]['dt_txt'],
@@ -30,11 +30,11 @@ Widget hourlyWeather (List<dynamic> weatherList) {
 }
 
 class HourlyDetails extends StatelessWidget {
-  double temp;
-  String time;
-  String icon;
+  final double temp;
+  final String time;
+  final String icon;
 
-  HourlyDetails({Key? key, required this.temp, required this.time, required this.icon}) : super(key: key);
+  const HourlyDetails({Key? key, required this.temp, required this.time, required this.icon}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +44,7 @@ class HourlyDetails extends StatelessWidget {
           padding: const EdgeInsets.only(top: 3.0),
           child: Text(time, textAlign: TextAlign.center),
         ),
-        SizedBox(height: 15.0,),
+        const SizedBox(height: 15.0,),
         Image.network('http://openweathermap.org/img/w/$icon.png'),
         Text('${temp.round()}°C')
       ],
